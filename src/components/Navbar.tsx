@@ -1,6 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import Button from "./Button";
-import { TiLocationArrow } from "react-icons/ti";
 import { useWindowScroll } from "react-use";
 import { gsap } from "gsap";
 
@@ -39,6 +37,11 @@ const Navbar = () => {
     })
   }, [isNavVisible])
 
+  const scrollToSection = (id: string) => {
+    const section = document.querySelector(`#${id}`);
+    section?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
   const toggleAudioIndicator = () => {
     setIsAudioPlaying((prevState) => !prevState);
     setIsIndicatorActive((prevState) => !prevState);
@@ -60,14 +63,14 @@ const Navbar = () => {
       <header className="absolute top-1/2 w-full -translate-y-1/2">
         <nav className="flex size-full items-center justify-between p-4">
           <div className="flex items-center gap-7">
-            <img src="/images/logo.svg" alt="Logo" className="w-10" />
+            <img src="/images/logo.svg" alt="Logo" className="w-10 cursor-pointer" onClick={() => scrollToSection('hero')} />
           </div>
           <div className="flex h-full items-center">
             <div className="hidden md:block">
               {navItems.map((item) => (
                 <a
                   key={item}
-                  href={`#${item.toLowerCase()}`}
+                  onClick={() => scrollToSection(`${item.toLowerCase()}`)}
                   className="nav-hover-btn"
                 >
                   {item}
