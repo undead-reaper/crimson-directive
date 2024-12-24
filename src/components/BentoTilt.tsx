@@ -9,7 +9,7 @@ const BentoTilt = (props: BentoTiltProps) => {
   const [transformStyle, setTransformStyle] = useState("");
   const itemRef = useRef<HTMLDivElement>(null);
 
-  const handleMouseMove = (event: any) => {
+  const handleMouseMove = (event: React.MouseEvent<HTMLImageElement>) => {
     if (!itemRef.current) return;
 
     const { left, top, width, height } =
