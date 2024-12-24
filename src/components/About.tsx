@@ -26,11 +26,11 @@ const About = () => {
   });
 
   return (
-    <div id="about" className="min-h-screen h-screen">
+    <div id="about" className="min-h-screen w-screen">
       <div className="relative mb-8 mt-36 flex flex-col items-center gap-5">
-        <h2 className="font-general text-sm uppercase md:text-[10px]">
+        <p className="font-general text-sm uppercase md:text-[10px]">
           Welcome to Crimson Detective
-        </h2>
+        </p>
         <AnimatedTitle title="Pre<b>c</b>ision and survival <br /> in a war-t<b>o</b>rn future." className="mt-5 !text-black text-center" />
         <div className="about-subtext">
           <p>
@@ -38,7 +38,7 @@ const About = () => {
             fate. Engage in intense firefights and uncover a world shrouded in
             chaos and secrets.
           </p>
-          <p>Crimson Directive: Command the chaos, conquer the battlefield.</p>
+          <p className="text-gray-500">Crimson Directive: Command the chaos, conquer the battlefield.</p>
         </div>
       </div>
       <div className="h-dvh w-screen" id="clip">
